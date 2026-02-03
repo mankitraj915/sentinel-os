@@ -26,69 +26,75 @@ graph LR
     Supervisor -->|Has Info| Responder[Gemini Analyst]
     Researcher --> Responder
     Responder --> UI[Next.js Terminal]
+```
 
-🛠️ Tech Stack
-The Brain (Backend)
-LangGraph: Stateful multi-agent orchestration.
+## 🛠️ Tech Stack
 
-FastAPI: High-performance Async I/O server with WebSockets.
+### **The Brain (Backend)**
+* **LangGraph:** Stateful multi-agent orchestration.
+* **FastAPI:** High-performance Async I/O server with WebSockets.
+* **Google Gemini Flash:** Low-latency LLM for reasoning.
+* **Tavily API:** Specialized AI search engine for real-time facts.
 
-Google Gemini Flash: Low-latency LLM for reasoning.
+### **The Interface (Frontend)**
+* **Next.js 15:** React framework with Server-Side Rendering.
+* **TailwindCSS:** Utility-first styling for the "Cyberpunk" aesthetic.
+* **React Markdown:** Renders tables, lists, and code blocks dynamically.
 
-Tavily API: Specialized AI search engine for real-time facts.
+---
 
-The Interface (Frontend)
-Next.js 15: React framework with Server-Side Rendering.
+## 🚀 Installation & Setup
 
-TailwindCSS: Utility-first styling for the "Cyberpunk" aesthetic.
-
-React Markdown: Renders tables, lists, and code blocks dynamically.
-
-🚀 Installation & Setup
-1. Clone the Repository
-Bash
-
+### 1. Clone the Repository
+```bash
 git clone [https://github.com/YOUR_USERNAME/sentinel-os.git](https://github.com/YOUR_USERNAME/sentinel-os.git)
 cd sentinel-os
-2. Backend Setup (The Brain)
-Bash
+```
 
+### 2. Backend Setup (The Brain)
+```bash
 cd backend
 python -m venv venv
 .\venv\Scripts\activate   # Windows
 # source venv/bin/activate # Mac/Linux
 
 pip install -r requirements.txt
-Create a .env file in /backend:
+```
 
-Code snippet
-
+**Create a `.env` file in `/backend`:**
+```env
 GOOGLE_API_KEY=your_gemini_key
 TAVILY_API_KEY=your_tavily_key
-Run the Server:
+```
 
-Bash
-
+**Run the Server:**
+```bash
 uvicorn main:app --reload
-3. Frontend Setup (The Terminal)
+```
+
+### 3. Frontend Setup (The Terminal)
 Open a new terminal window:
-
-Bash
-
+```bash
 cd frontend
 npm install
 npm run dev
-Access the terminal at: http://localhost:3000
+```
 
-📸 Capabilities
-Feature	Status	Description
-Live Search	✅	Bypasses knowledge cutoffs using Tavily.
-Markdown UI	✅	Renders complex tables and formatting.
-Session Memory	✅	Remembers context (e.g., 'Who is he?').
-Streaming	✅	Real-time token streaming (no waiting).
-Auto-Correction	⚠️	Disabled for speed (Latency Optimization).
+Access the terminal at: **http://localhost:3000**
 
-Export to Sheets
+---
 
-📄 License
+## 📸 Capabilities
+
+| Feature | Status | Description |
+| :--- | :--- | :--- |
+| **Live Search** | ✅ | Bypasses knowledge cutoffs using Tavily. |
+| **Markdown UI** | ✅ | Renders complex tables and formatting. |
+| **Session Memory**| ✅ | Remembers context (e.g., 'Who is *he*?'). |
+| **Streaming** | ✅ | Real-time token streaming (no waiting). |
+| **Auto-Correction**| ⚠️ | Disabled for speed (Latency Optimization). |
+
+---
+
+## 📄 License
 MIT License. Built for the Future.
